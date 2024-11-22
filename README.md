@@ -37,4 +37,5 @@ Avaliação do Modelo:
 
 O desempenho do modelo é avaliado no conjunto de teste, e a acurácia é impressa.
 
+![image](https://github.com/user-attachments/assets/81dab583-7cbe-4118-9064-527408784391)
 

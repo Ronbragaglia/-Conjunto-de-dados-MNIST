@@ -1,41 +1,43 @@
-Importações Necessárias:
+# CNN para Classificação MNIST
 
-O código importa as bibliotecas necessárias do TensorFlow, incluindo módulos para construir e compilar o modelo, carregar o conjunto de dados MNIST, e para pré-processamento dos dados.
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white) ![Topic](https://img.shields.io/badge/Topic-deep-learning-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-Carregamento dos Dados:
+## Descrição
 
-A base de dados MNIST é carregada, que contém imagens de dígitos manuscritos (0 a 9).
-Os dados são divididos em conjuntos de treino (train_images e train_labels) e teste (test_images e test_labels).
+Rede neural convolucional (CNN) para classificação de dígitos manuscritos no dataset MNIST com 60.000 imagens de treino e 10.000 de teste.
 
-Pré-processamento das Imagens:
+## Funcionalidades
 
-As imagens são remodeladas para incluir um canal adicional (28, 28, 1), necessário para a entrada na camada convolucional.
-As imagens são normalizadas (divididas por 255) para escalar os valores de pixel para a faixa [0, 1].
-Os rótulos (labels) são convertidos para a codificação one-hot usando to_categorical, que é essencial para a função de perda categorical_crossentropy.
+- Arquitetura CNN com camadas Conv2D e MaxPooling
+- Treinado no dataset MNIST padrão (70k imagens)
+- Avaliação detalhada com métricas de acurácia
+- Visualização de predições e exemplos incorretos
+- Pipeline completo: treino, validação e teste
 
-Modelo:
+## Stack Tecnológico
 
-O modelo é um Sequential com várias camadas:
+| Tecnologia | Descrição |
+|---|---|
+| Python | Linguagem principal |
+| TensorFlow / Keras | Framework de deep learning |
+| NumPy | Manipulação de arrays |
+| Matplotlib | Visualização de resultados |
 
-Camadas Convolucionais: Três camadas Conv2D que extraem características das imagens.
+## Como Usar
 
-Camadas de Pooling: MaxPooling2D após cada camada convolucional para reduzir a dimensionalidade e melhorar a invariância a translações.
+1. Instale as dependências: `pip install tensorflow matplotlib`
+2. Execute: `python cnn_mnist.py`
+3. O modelo será treinado e os resultados exibidos automaticamente
 
-Camada Densa: Uma camada Dense com 64 neurônios e ativação ReLU para processar as características extraídas.
+## Estrutura de Pastas
 
-Camada de Saída: Uma camada Dense final com 10 neurônios (um para cada classe de dígito) e ativação softmax para a classificação.
+```
+├── cnn_mnist.py
+├── modelos/
+├── outputs/
+└── requirements.txt
+```
 
-Compilação do Modelo:
+---
 
-O modelo é compilado usando o otimizador rmsprop, a função de perda categorical_crossentropy, e a métrica de accuracy para avaliação.
-
-
-Treinamento:
-
-O modelo é treinado por 5 épocas, utilizando um batch_size de 64 e validando no conjunto de testes.
-Avaliação do Modelo:
-
-O desempenho do modelo é avaliado no conjunto de teste, e a acurácia é impressa.
-
-![image](https://github.com/user-attachments/assets/81dab583-7cbe-4118-9064-527408784391)
-
+> Feito com ❤️ por Rone Bragaglia · ML Engineer & Fundador CobrançaAuto
